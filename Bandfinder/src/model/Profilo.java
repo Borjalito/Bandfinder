@@ -5,11 +5,9 @@ import java.io.File;
 public class Profilo {
 	private String description;
 	private File image;
-	//TODO: cambiare imgName con classe File
 	
 	
 	public Profilo(String description, File image) {
-		super();
 		this.description = description;
 		this.image = image;
 	}

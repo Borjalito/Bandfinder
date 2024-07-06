@@ -5,8 +5,8 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>template</display-name>
-    <description> Progetto d'esame</description>
+    <display-name>Bandfinder</display-name>
+    <description>La piattaforma per il tuo talento</description>
 
 	<!-- Context attributes to be used throughout the application -->
 	<context-param>
@@ -20,12 +20,14 @@
 	
 	
     <!-- Define servlets that are included in the application -->
+    
+    
 
 	<!-- Welcome pages -->
 	<!-- pleonastico: tomcat "tenta" in automatico le index.html e index.jsp -->
 	
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>anExample.html</welcome-file>
 	</welcome-file-list>
 		
 	<!-- Handle exceptions and errors -->
