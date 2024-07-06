@@ -14,4 +14,8 @@ public class Proposta {
 		return tracceProposte;
 	}
 	
+	public void sliteritch() {
+		
+	}
+	
 }
