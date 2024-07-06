@@ -24,9 +24,6 @@ public class Utente {
 		numeroSeguaci=0;
 	}
 	
-	public void ciao() {
-		System.out.println("");
-	}
 
 	public void seguiUtente(Utente daSeguire) {
 		seguiti.add(daSeguire);

@@ -11,10 +11,4 @@ public class Tag {
 		return valore;
 	}
 	
-	public void borjaValero() {
-		
-	}
-	public void sliteritch() {
-		
-	}
 }
