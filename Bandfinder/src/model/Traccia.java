@@ -14,6 +14,10 @@ public class Traccia {
 		this.autore = autore;
 	}
 	
+	public void borjaValero2() {
+		
+	}
+	
 	public String getNome() {
 		return nome;
 	}
