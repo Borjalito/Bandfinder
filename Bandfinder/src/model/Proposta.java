@@ -21,4 +21,8 @@ public class Proposta {
 			
 		}
 	
+	public void sliterich2() {
+		
+	}
+	
 }
