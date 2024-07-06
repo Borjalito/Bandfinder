@@ -17,5 +17,8 @@ public class Proposta {
 	public void sliteritch() {
 		
 	}
+	public void sliteritch3() {
+			
+		}
 	
 }
