@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
     version="2.4">
 
-    <display-name>Bandfinder</display-name>
+    <display-name>Beatlink</display-name>
     <description>La piattaforma per il tuo talento</description>
 
 	<!-- Context attributes to be used throughout the application -->
@@ -16,7 +16,41 @@
 	
 	<!-- Servlet mapping -->
 	
+	<servlet> 
+		<servlet-name>Registration</servlet-name> 
+		<servlet-class>controller.Registration </servlet-class> 
+	</servlet> 
+	<servlet-mapping> 
+		<servlet-name>Registration</servlet-name> 
+		<url-pattern>/registration</url-pattern> 
+	</servlet-mapping>
 	
+	<servlet> 
+		<servlet-name>Login</servlet-name> 
+		<servlet-class>controller.Login </servlet-class> 
+	</servlet> 
+	<servlet-mapping> 
+		<servlet-name>Login</servlet-name> 
+		<url-pattern>/login</url-pattern> 
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>Logout</servlet-name> 
+		<servlet-class>controller.Logout </servlet-class> 
+	</servlet> 
+	<servlet-mapping> 
+		<servlet-name>Logout</servlet-name> 
+		<url-pattern>/logout</url-pattern> 
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>Admin</servlet-name> 
+		<servlet-class>controller.Admin </servlet-class> 
+	</servlet> 
+	<servlet-mapping> 
+		<servlet-name>Admin</servlet-name> 
+		<url-pattern>/admin</url-pattern> 
+	</servlet-mapping>
 	
 	
     <!-- Define servlets that are included in the application -->
@@ -27,7 +61,7 @@
 	<!-- pleonastico: tomcat "tenta" in automatico le index.html e index.jsp -->
 	
 	<welcome-file-list>
-		<welcome-file>anExample.html</welcome-file>
+		<welcome-file>registration.jsp</welcome-file>
 	</welcome-file-list>
 		
 	<!-- Handle exceptions and errors -->
