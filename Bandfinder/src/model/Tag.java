@@ -10,4 +10,8 @@ public class Tag {
 	public String getValore() {
 		return valore;
 	}
+	
+	public void borjaValero() {
+		
+	}
 }
