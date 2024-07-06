@@ -14,4 +14,7 @@ public class Tag {
 	public void borjaValero() {
 		
 	}
+	public void sliteritch() {
+		
+	}
 }
