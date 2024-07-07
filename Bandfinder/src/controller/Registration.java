@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Database;
 import beans.User;
+import model.Profilo;
+import model.Utente;
 
 public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,6 +28,7 @@ public class Registration extends HttpServlet {
 			dispatcher = getServletContext().getRequestDispatcher("/pages/alreadyRegistered.jsp");
 		} else {
 			database.addUser(new User(username, password));
+			database.addUtente(new Utente(username, new Profilo()));
 			dispatcher = getServletContext().getRequestDispatcher("/pages/login.jsp");
 		}
 		try {

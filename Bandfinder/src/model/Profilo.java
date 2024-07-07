@@ -6,6 +6,10 @@ public class Profilo {
 	private String description;
 	private File image;
 	
+	public Profilo() {
+		this.description ="default description";
+		image = null;
+	}
 	
 	public Profilo(String description, File image) {
 		this.description = description;

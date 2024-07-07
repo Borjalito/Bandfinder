@@ -1,10 +1,8 @@
 package controller;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 
 import javax.servlet.RequestDispatcher;
@@ -17,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import beans.*;
+import model.Licenza;
+import model.Progetto;
+import model.Utente;
 
 @WebServlet("/upload")
 @MultipartConfig
@@ -27,7 +28,7 @@ public class CreaProgetto extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String titolo = request.getParameter("titolo");
 		String descrizione = request.getParameter("descrizione");
-		String licenza = request.getParameter("licenza");
+		Licenza licenza = Licenza.valueOf(request.getParameter("licenza"));
 		int bpm = Integer.parseInt(request.getParameter("bpm"));
 		
 		//estrazione e salvataggio immagine
@@ -40,21 +41,30 @@ public class CreaProgetto extends HttpServlet {
         
         // Ottieni il file caricato
         Part part;
+        File immagine = null;
 		try {
 			part = request.getPart("immagine");
 		
 			String fileName = getFileName(part);
-			File file = new File(uploadDir, fileName);
+			immagine = new File(uploadDir, fileName);
 
 			// Salva il file
         	InputStream input = part.getInputStream();
-            Files.copy(input, file.toPath());
+            Files.copy(input, immagine.toPath());
 		} catch (IOException | ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
-		//Progetto progetto = new Progetto(titolo, descrizione, licenza, bpm..bpm.);
+		String username = ((Utente)(request.getSession().getAttribute("user"))).getUsername() ;
+		Progetto progetto = new Progetto(titolo, descrizione, bpm, immagine, database.getUtente(username) ,licenza);
+		database.addProgetto(progetto);
+		//TODO: addProgetto restituisce l'intero che mi serve per recuperare la info dal db
+		//devo salvare tale attributo da qualche parte e sapere a cosa è associato
+		//potrei creare una lista/mappa di progetti e salvare come attributo servletContext
+		
+		//TODO: test funzionamento immagine dopo creazione progetto 
+		//io salvo Progetto nel db creando con File. Quando lo visualizzo va tutto liscio?
 		
 		try {
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/pages/homeUtente.jsp");
