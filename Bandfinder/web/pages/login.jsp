@@ -28,7 +28,7 @@ if(u!=null){
 
 <div>
   	<h2>Inserisci le credenziali utente</h2>
-  	<form action="<%=request.getContextPath()%>/login" method="get">
+  	<form action="<%=request.getContextPath()%>/login" method="post">
   		<input type="text" size="20" name="userName" hint="insert the username"><br>
   		<input type="password" size="20" name="password" hint="insert the your pwd"><br>
   		<!--  <input type="text" size="7" name="gruppo" hint="insert the group"><br> -->

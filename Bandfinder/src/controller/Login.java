@@ -13,7 +13,8 @@ public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Database database;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+		
 		String username = request.getParameter("userName");
 		String password = request.getParameter("password");
 		User u = database.getUser(username);
@@ -55,12 +56,9 @@ public class Login extends HttpServlet {
 		}
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-		
-	}
 	
 	public void init() {
-		 //instanziato come bean in index.jsp
 		 database = (Database)getServletContext().getAttribute("database");
+		 
 	}
 }

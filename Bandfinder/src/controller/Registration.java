@@ -15,10 +15,10 @@ public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Database database;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String username = request.getParameter("userName");
 		String password = request.getParameter("password");
-		String url = request.getRequestURL().toString(); 
+		//String url = request.getRequestURL().toString(); 
 	    //String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/"; 
 		
 		RequestDispatcher dispatcher;
@@ -35,9 +35,6 @@ public class Registration extends HttpServlet {
 		}
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-		
-	}
 	
 	public void init() {
 		database = (Database)getServletContext().getAttribute("database");

@@ -52,6 +52,24 @@
 		<url-pattern>/admin</url-pattern> 
 	</servlet-mapping>
 	
+	<servlet> 
+		<servlet-name>CreaProgetto</servlet-name> 
+		<servlet-class>controller.CreaProgetto </servlet-class> 
+	</servlet> 
+	<servlet-mapping> 
+		<servlet-name>CreaProgetto</servlet-name> 
+		<url-pattern>/creaProgetto</url-pattern> 
+	</servlet-mapping>
+	
+	<servlet> 
+		<servlet-name>ValutaProposta</servlet-name> 
+		<servlet-class>controller.ValutaProposta </servlet-class> 
+	</servlet> 
+	<servlet-mapping> 
+		<servlet-name>ValutaProposta</servlet-name> 
+		<url-pattern>/valutaProposta</url-pattern> 
+	</servlet-mapping>
+	
 	
     <!-- Define servlets that are included in the application -->
     

@@ -18,7 +18,7 @@
   	
 <div>
   	<p><h5>Inserisci i dati</h5></p>
-  	<form action="./registration" method="get">
+  	<form action="./registration" method="post">
   		<input type="text" size="20" name="userName" hint="inserisci lo username"><br>
   		<input type="password" size="20" name="password" hint="inseerisci la password"><br>
   		<!--   input type="text" size="7" name="gruppo" hint="insert the group"><br> -->

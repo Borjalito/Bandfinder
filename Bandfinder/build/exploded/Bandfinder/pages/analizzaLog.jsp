@@ -30,7 +30,7 @@ if(! database.getUser("admin").getLogged() ) {
 }
 %>
 
-	<br><a href="<%=baseURL %>registrazione.jsp">Torna alla registrazione</a>
+	<br><a href="<%=baseURL %>pages/registration.jsp">Torna alla registrazione</a>
 
 </body>
 </html>

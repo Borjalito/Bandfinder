@@ -27,7 +27,8 @@ if(u==null || !u.getLogged()){
 } else {
 %>
 
-
+for(Progetto, Proposta ---> poi altra view traccia)
+<br><a href="<%=baseURL %>pages/esploraFeed.jsp">Valuta</a>
 
 
 <h2>QUA UN TASTO ESCI?</h2>

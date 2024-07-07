@@ -31,7 +31,6 @@ public class Logout extends HttpServlet {
 	}
 	
 	public void init() {
-		 //instanziato come bean in index.jsp
 		 database = (Database)getServletContext().getAttribute("database");
 	}
 }
