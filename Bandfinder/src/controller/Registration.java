@@ -18,12 +18,15 @@ public class Registration extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		String username = request.getParameter("userName");
 		String password = request.getParameter("password");
+		String url = request.getRequestURL().toString(); 
+	    //String baseURL = url.substring(0, url.length() - request.getRequestURI().length()) + request.getContextPath() + "/"; 
+		
 		RequestDispatcher dispatcher;
 		if(database.getUser(username)!=null){
 			dispatcher = getServletContext().getRequestDispatcher("/pages/alreadyRegistered.jsp");
 		} else {
 			database.addUser(new User(username, password));
-			dispatcher = getServletContext().getRequestDispatcher("/pages/succesfulRegistration.jsp");
+			dispatcher = getServletContext().getRequestDispatcher("/pages/login.jsp");
 		}
 		try {
 			dispatcher.forward(request, response);
@@ -37,7 +40,6 @@ public class Registration extends HttpServlet {
 	}
 	
 	public void init() {
-		//database è inizializzato nella index.jsp
 		database = (Database)getServletContext().getAttribute("database");
 	}
 }

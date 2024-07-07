@@ -9,9 +9,8 @@ public class Database {
 	public Database() {
 		this.utenti=new HashMap<>();
 		utenti.put("admin", new User("admin", "admin"));
-		utenti.put("def", new User("def","def"));
-		utenti.put("def1", new User("def1","def1"));
-		utenti.put("def2", new User("def2","def2"));
+		utenti.put("admin2", new User("admin2", "admin2"));
+		utenti.put("admin3", new User("admin3", "admin3"));
 	}
 	
 	public User getUser(String username) {

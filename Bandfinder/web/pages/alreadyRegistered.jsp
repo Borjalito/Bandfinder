@@ -15,8 +15,8 @@
    
   	<h1>Nome utente già registrato</h1>
 
-	<br><a href="<%=baseURL %>index.jsp">Torna all'inizio</a>
-	<br><a href="<%=baseURL %>pages/registration.jsp">prova di nuovo</a>   
+	<br><a href="<%=baseURL %>pages/registration.jsp">prova di nuovo la registrazione</a>   
+	<br><a href="<%=baseURL %>pages/login.jsp">sei tu? Vai al login </a> 
 
 </body>
 </html>

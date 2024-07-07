@@ -33,7 +33,7 @@ public class Login extends HttpServlet {
 					u.setLogged(true);
 					request.getSession().setAttribute("user", u);
 				} else {
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/pages/login.jsp");
 					try {
 						dispatcher.forward(request, response);
 					} catch (ServletException | IOException e) {
@@ -41,7 +41,12 @@ public class Login extends HttpServlet {
 					}
 				}
 			}
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/pages/loggedSection.jsp");
+			RequestDispatcher dispatcher;
+			if(u.getUsername().contains("admin")) {
+				dispatcher = getServletContext().getRequestDispatcher("/pages/analizzaLog.jsp");
+			} else {
+				dispatcher = getServletContext().getRequestDispatcher("/pages/homeUtente.jsp");
+			}
 			try {
 				dispatcher.forward(request, response);
 			} catch (ServletException | IOException e) {
